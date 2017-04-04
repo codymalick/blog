@@ -1,21 +1,42 @@
-{{set . "title" "Home"}}
+{{set . "title" "Blog"}}
 {{template "header.html" .}}
 
-<header class="jumbotron" style="background-color:#A9F16C">
+
+<header class="page-header" style="">
   <div class="container">
     <div class="row">
-      <h1>It works!</h1>
+      <h2>Interesting Tidbits</h2>
       <p></p>
     </div>
   </div>
 </header>
-
 <div class="container">
-  <div class="row">
-    <div class="span6">
-      {{template "flash.html" .}}
+
+<div class="row">
+    <div class="col-sm-12">
+        <h3>Tidbit Header 1</h3>
     </div>
-  </div>
+    <div class="col-lg-12">
+        There will be quite a bit of text here in order to fill a never really
+        ending box of text having to do with a code explaination
+    </div>
 </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>Code Blocks</h3>
+        </div>
+        <div class="col-lg-12">
+            Here is an example of a codeblock: <br>
+            <div class="col-md-6">
+
+                <pre class="prettyprint">func main() {
+    go func()
+}
+                </pre>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 {{template "footer.html" .}}
