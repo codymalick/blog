@@ -2,6 +2,7 @@
 {{template "header.html" .}}
 
 
+<div class="container">
 <header class="page-header" style="">
   <div class="container">
     <div class="row">
@@ -10,7 +11,6 @@
     </div>
   </div>
 </header>
-<div class="container">
 
 <div class="row">
     <div class="col-sm-12">
@@ -29,10 +29,24 @@
             Here is an example of a codeblock: <br>
             <div class="col-md-6">
 
-                <pre class="prettyprint">func main() {
-    go func()
+                <pre class="prettyprint lang-go">func Run(s *Server) {
+	rand.Seed(time.Now().UTC().UnixNano())
+	go func() {
+		address, err := net.ResolveTCPAddr("tcp", s.Port)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		inbound, err := net.ListenTCP("tcp", address)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		rpc.Register(s)
+		rpc.Accept(inbound)
+	}()
 }
-                </pre>
+        </pre>
             </div>
         </div>
     </div>
