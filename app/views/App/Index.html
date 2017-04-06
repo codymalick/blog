@@ -7,50 +7,64 @@
   <div class="container">
     <div class="row">
       <h2>Interesting Tidbits</h2>
-      <p></p>
     </div>
   </div>
 </header>
 
 <div class="row">
     <div class="col-sm-12">
-        <h3>Tidbit Header 1</h3>
+        <h3>Golang Channels</h3>
     </div>
     <div class="col-lg-12">
-        There will be quite a bit of text here in order to fill a never really
-        ending box of text having to do with a code explaination
+        We like golang channels because they are good. I should write more about
+        channels.
+</pre>
     </div>
 </div>
     <div class="row">
         <div class="col-sm-12">
-            <h3>Code Blocks</h3>
+            <h3>Golang RPC</h3>
         </div>
         <div class="col-lg-12">
-            Here is an example of a codeblock: <br>
+            <p>
+                Before we can talk about Remote Procedure Calls, we first need to
+                define how a process can be bound to a particular TCP (or UDP) port.
+                Go provides very simple interfaces to make this task trivial:
+            </p>
             <div class="col-md-6">
+                <pre class="prettyprint lang-go">
+import(
+    "log"
+    "net"
+    "net/rpc"
+)
 
-                <pre class="prettyprint lang-go">func Run(s *Server) {
-	rand.Seed(time.Now().UTC().UnixNano())
-	go func() {
-		address, err := net.ResolveTCPAddr("tcp", s.Port)
-		if err != nil {
-			log.Fatal(err)
-		}
+func Run(s *Server) {
+    address, err := net.ResolveTCPAddr("tcp", s.Port)
+    if err != nil {
+        log.Fatal(err)
+    }
 
-		inbound, err := net.ListenTCP("tcp", address)
-		if err != nil {
-			log.Fatal(err)
-		}
+    inbound, err := net.ListenTCP("tcp", address)
+    if err != nil {
+        log.Fatal(err)
+    }
 
-		rpc.Register(s)
-		rpc.Accept(inbound)
-	}()
+    rpc.Register(s)
+    rpc.Accept(inbound)
 }
-        </pre>
             </div>
+            <p>
+                Using Go's net/rpc package, we can directly bind a program
+                to a specified port with ease. Then....
+            </p>
         </div>
     </div>
 </div>
 
 
 {{template "footer.html" .}}
+
+
+
+
