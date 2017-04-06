@@ -1,0 +1,31 @@
+{{set . "title" "Comment"}}
+{{template "header.html" .}}
+<div class="container">
+<header class="page-header" style="">
+  <div class="container">
+    <div class="row">
+      <h2>Send me a comment!</h2>
+    </div>
+  </div>
+</header>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <p>
+                Let me know if you found something interesting, incorrect, or
+                just wanted to leave some feedback. It's completely anonymous.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <form class="" action="/comment" method="GET">
+                <input type="text" name="" value="">
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+{{template "footer.html" .}}
+
