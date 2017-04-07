@@ -10,18 +10,22 @@
 </header>
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <p>
                 Let me know if you found something interesting, incorrect, or
                 just wanted to leave some feedback. It's completely anonymous.
             </p>
         </div>
-        <div class="col-md-6">
-            <form class="" action="/comment" method="GET">
+        <div class="col-md-12">
+            <form class="" id="cform" action="/App/SendComment" method="GET">
+                {{with $field := field "message" .}}
+                <div class="form-group">
+                    <textarea class="form-control" name="{{$field.Name}}" form="cform" rows="8" cols="40" value="{{$field.Value}}"></textarea><br>
+                    <input class="btn btn-default" type="submit" value="Send" />
+            </div>
+            {{end}}
 
             </form>
-            <input type="text" name="comment" value="Leave me a note!">
-            <textarea name="comment" rows="8" cols="80"></textarea>
 
         </div>
     </div>
