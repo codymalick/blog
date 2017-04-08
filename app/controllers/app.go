@@ -27,3 +27,7 @@ func (c App) SendComment(message string) revel.Result {
 
     return c.Render(message)
 }
+
+func (c App) Barcamp() revel.Result {
+	return c.Render()
+}
