@@ -8,6 +8,8 @@ module:testrunner
 
 
 GET     /                                       App.Index
+GET     /comment                                App.Comment
+GET     /cassidy                                App.Cassidy
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

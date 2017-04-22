@@ -31,3 +31,7 @@ func (c App) SendComment(message string) revel.Result {
 func (c App) Barcamp() revel.Result {
 	return c.Render()
 }
+
+func (c App) Cassidy() revel.Result {
+	return c.Render()
+}
