@@ -1,17 +1,26 @@
 {{set . "title" "Comment"}}
 {{template "header.html" .}}
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(){
+      Typed.new(".cassidy", {
+          strings: ["Cassidy, \n here's a really long message and a poem I wrote you: \n Roses are red, cloaks are brown, IT'S OVER ANAKIN, I HAVE THE HIGH GROUND"],
+          typeSpeed: 150
+      });
+  });
+</script>
 <div class="container">
 <header class="page-header" style="">
   <div class="container">
     <div class="row">
-      <h2>Hi</h2>
+      <span class="cassidy"></span>
     </div>
   </div>
 </header>
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-          
+
         </div>
     </div>
 </div>
